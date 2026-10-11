@@ -38,7 +38,19 @@ android {
 }
 
 dependencies {
+    // Retrofit 3
+    // https://github.com/lysine-dev/retrofit/releases
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:3.0.0")
+
+    // AsyncImage
+    // https://github.com/coil-kt/coil/blob/main/README-ko.md
+    // https://github.com/coil-kt/coil/releases
+    implementation("io.coil-kt.coil3:coil-compose:3.6.3")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.6.3")
+
     // Navigation 3
+    // https://developer.android.com/jetpack/androidx/releases/navigation3?hl=ko
     val nav3Version = "1.2.0"
     implementation("androidx.navigation3:navigation3-runtime:$nav3Version")
     implementation("androidx.navigation3:navigation3-ui:$nav3Version")
