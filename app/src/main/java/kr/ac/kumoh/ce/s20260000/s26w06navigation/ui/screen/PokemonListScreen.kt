@@ -5,6 +5,7 @@ import android.R.attr.onClick
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,8 +26,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -75,7 +78,10 @@ fun PokemonCard(
         onClick = { onClick(pokemon.id)}
     ) {
         Row(
-
+            modifier = Modifier
+                .fillMaxSize()
+                .height(IntrinsicSize.Min),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             AsyncImage(
                 model = pokemon.image,
@@ -92,6 +98,9 @@ fun PokemonCard(
             Column(
                 modifier = Modifier
                     .padding(16.dp)
+                    .fillMaxSize(),
+//                    .background(MaterialTheme.colorScheme.primaryContainer),
+                verticalArrangement = Arrangement.SpaceAround
             ) {
                 Text(
                     text = pokemon.name,
